@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.text.TextStyle
@@ -15,7 +18,16 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
 //    setContentView(R.layout.activity_main)
     setContent {
-      RecipeList(defaultRecipes)
+      // 1
+      Column(modifier = Modifier.fillMaxSize()) {
+        // 2
+        TopAppBar(title = {
+          Text("ComposableCookBook")
+        })
+        // 3
+        RecipeList(defaultRecipes)
+      }
+
     }
   }
 }
