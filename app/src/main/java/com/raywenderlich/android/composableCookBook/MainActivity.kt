@@ -33,11 +33,17 @@ class MainActivity : AppCompatActivity() {
 }
 
 @Composable
-@Preview
+@Preview(showBackground = true)
 fun Greeting() {
-  Column {
-    Text("Hello, World!", style = TextStyle(color = Color.Red))
-    Text("Hello, Second World!", style = TextStyle(color = Color.Red))
-    Text("Hello, Third World!", style = TextStyle(color = Color.Red))
+//  Column {
+//    Text("Hello, World!", style = TextStyle(color = Color.Red))
+//    Text("Hello, Second World!", style = TextStyle(color = Color.Red))
+//    Text("Hello, Third World!", style = TextStyle(color = Color.Red))
+//  }
+  Column(modifier = Modifier.fillMaxSize()) {
+    TopAppBar(title = {
+      Text("ComposableCookBook")
+    })
+    RecipeList(defaultRecipes)
   }
 }
